@@ -570,3 +570,10 @@ Count Factors
         onComplete: null,  // callback method for when the element finishes updating
     };
 })(jQuery);
+
+var container = document.querySelector('#ig-container');
+var msnry;
+// initialize Masonry after all images have loaded
+imagesLoaded( container, function() {
+  msnry = new Masonry( container );
+});

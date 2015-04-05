@@ -300,7 +300,7 @@ window.onload = function () {
 			
 			var myLatlng = new google.maps.LatLng(40.9136854,-73.1182355);
 			
-			var image = '<%= asset_path(marker.png) %>';
+			var image = '<%= asset_path("marker.png") %>';
 			var marker = new google.maps.Marker({
 				  position: myLatlng,
 				  map: map,

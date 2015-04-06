@@ -3,7 +3,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_filter :check_uri
+
+  private
   def check_uri
-    redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host)
+    unless /^www/.match(request.host)
+      redirect_to("#{request.protocol}www.#{request.host_with_port}",
+                  :status => 301)
+  	end
   end
 end

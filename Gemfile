@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'instagram'
 gem 'httparty'
 gem 'imagesLoaded_rails'
+gem 'tzinfo-data'
 
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production

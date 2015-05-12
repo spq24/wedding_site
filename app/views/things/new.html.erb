@@ -1,0 +1,96 @@
+<body data-spy="scroll" data-target=".nav-menu" data-offset="50">
+	<!-- Navigation Section -->
+	<section id="navigation" class="shadow">
+	
+		<div class="inner navigation">
+			
+			<!-- Logo Img -->
+			<div class="logo">
+				<a class="scroll" href="/"><%= image_tag 'logo.png', alt: "Logo" %></a>
+			</div>
+			
+			<!-- Nav Menu -->
+			<div class="nav-menu">
+				
+				<ul class="nav main-nav">
+					<li><a class="scroll" href="/#about">where & when</a></li>
+					<li><a class="scroll" href="/#history">our story</a></li>
+					<li><a class="scroll" href="/#bridegroom">engagement story</a></li>					
+					<li><a class="scroll" href="/#team">our team</a></li>
+					<li><a class="scroll" href="/#hotel">hotel</a></li>
+					<li><a class="scroll" href="/#registry">Registry</a></li>
+					<li><a class="scroll" href="/#photos">Photo Gallery</a></li>
+					<li><a class="scroll jade" style="color: #128E92;" href="/#social">#allyqwedding</a></li>			
+				</ul>
+				
+			</div>
+			
+			
+				<!-- Dropdown Menu For Mobile Devices-->
+				<div class="dropdown mobile-drop">
+				  <a data-toggle="dropdown" class="mobile-menu" href="#"><i class="fa fa-bars"></i></a>
+				  <ul class="nav dropdown-menu fullwidth" role="menu" >
+					<li><a class="scroll" href="/#home">home</a></li>
+					<li><a class="scroll" href="/#about">where & when</a></li>
+					<li><a class="scroll" href="/#history">our story</a></li>
+					<li><a class="scroll" href="/#bridegroom">the bride & groom</a></li>					
+					<li><a class="scroll" href="/#team">our team</a></li>
+					<li><a class="scroll" href="/#hotel">hotel</a></li>
+					<li><a class="scroll" href="/#register">Registry</a></li>
+					<li><a class="scroll" href="/#photos">Photo Gallery</a></li>
+					<li><a class="scroll" href="/#social">#allyqwedding</a></li>	
+				  </ul>
+				</div>
+		
+			<div class="clear"></div>
+		</div>
+	
+	</section>
+	<!-- End Navigation Section -->
+	
+	<% flash.each do |name, msg| %>
+	  <div class="alert alert-<%= name %> alert-dismissable" role="alert">
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+	  </div>
+	<% end %><br /><br /><br /><br />
+
+
+	<center>
+		<h1>Let's Surprise Amanda!</h1>
+		<p>I'm going to put together a little video for Amanda to watch the morning of our wedding. I want to show her how much she is loved by everyone who will be attending our wedding.<br />Upload either an image of you and Amanda together or a selfie video wishing Amanda well. This will only be for her so you don't have to worry about this being shown to a crowd.<br /> Share memories, share fun things you've done, and tell her everything you would want to as if you were in person on the morning of her wedding. <b><em>Have fun with it!</em></b></p><br /><br />
+		<%= form_for @thing do |f| %>
+			<%= f.label :name, "Your Name" %><br />
+			<%= f.text_field :name, placeholder: "Steve Quatrani", class: "form-control" %><br /><br />
+			<%= f.label :email, "Your Email" %><br />
+			<%= f.text_field :email, placeholder: "spq2461@gmail.com", class: "form-control" %><br />
+			
+			<%= f.label :image, "Upload An Image" %><br />
+			<%= f.file_field :image %><br /><br />
+			<%= f.label :video, "Upload a Video" %><br />
+			<%= f.file_field :video %><br /><br />
+			<%= f.submit "Share Your Love For Amanda", class: "submit-button" %>
+		<% end %><br />
+	</center>
+	<section class="instructions">
+		<h2>What to do:</h2>
+		<h3>Videos</h3>
+		<ul>
+			<li>Take a selfie video (<a href="http://www.wikihow.com/Take-Good-Selfies" target="_blank">instructions so you look like a boss</a>)</li>
+			<li>Once you are good with it go to allyqwedding.com/surprise either on your phone or computer and upload the video</li>
+			<li>Click the choose file button below the "upload a video" label and select the video</li>
+			<li>Then click the "Share Your Love For Amanda" button</li>
+			<li>Share this with other friends and family!</li>
+		</ul>
+
+		<h3>Images</h3>
+		<ul>
+			<li>Find images of you and Amanda from any time frame.</li>
+			<li>Go to allyqwedding.com/surprise either on your phone or computer and upload the image</li>
+			<li>If you have multiple you want to upload send them to spq2461@gmail.com</li>
+			<li>Then click the "Share Your Love For Amanda" button</li>
+			<li>Share this with other friends and family!</li>
+		</ul>
+
+
+	</section>

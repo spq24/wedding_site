@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require imagesloaded
+//= require masonry/masonry.min
+//= require masonry/jquery.imagesloaded.min
+//= require isotope/jquery.isotope
 //= require_tree .

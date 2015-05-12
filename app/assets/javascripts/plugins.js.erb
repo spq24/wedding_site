@@ -300,7 +300,7 @@ window.onload = function () {
 			
 			var myLatlng = new google.maps.LatLng(40.9136854,-73.1182355);
 			
-			var image = 'assets/marker.png';
+			var image = '<%= asset_path("marker.png") %>';
 			var marker = new google.maps.Marker({
 				  position: myLatlng,
 				  map: map,
@@ -570,3 +570,10 @@ Count Factors
         onComplete: null,  // callback method for when the element finishes updating
     };
 })(jQuery);
+
+var container = document.querySelector('#ig-container');
+var msnry;
+// initialize Masonry after all images have loaded
+imagesLoaded( container, function() {
+  msnry = new Masonry( container );
+});

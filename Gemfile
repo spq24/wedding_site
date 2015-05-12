@@ -18,9 +18,16 @@ gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'instagram'
 gem 'httparty'
-gem 'imagesLoaded_rails'
+gem 'masonry-rails'
+gem 'fog'
+gem 'fog-aws'
+gem 'aws-sdk'
+gem 'figaro'
+gem 'carrierwave'
+gem 'jquery.fileupload-rails'
+gem 'mini_magick'
 
-gem 'pg'
+gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -44,4 +51,3 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

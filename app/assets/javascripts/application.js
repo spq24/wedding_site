@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require masonry/masonry.min
 //= require masonry/jquery.imagesloaded.min
+//= require masonry/masonry.min
 //= require isotope/jquery.isotope
+//= require blueimp-gallery-all
+//= require video
 //= require_tree .

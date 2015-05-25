@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   get '/instagram' => 'static_pages#instagram'
   get '/surprise' => 'things#new'
   get '/thank_you' => 'things#thank_you', as: 'thank_you'
+  get '/friends'   => 'things#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

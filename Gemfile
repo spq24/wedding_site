@@ -27,6 +27,9 @@ gem 'carrierwave'
 gem 'jquery.fileupload-rails'
 gem 'mini_magick'
 gem 'imagesLoaded_rails'
+gem 'rails_admin'
+gem 'blueimp-gallery'
+gem 'videojs_rails'
 
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production

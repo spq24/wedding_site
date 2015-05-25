@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require blueimp-gallery-all
  *= require_tree .
  *= require_self
+ *= require video-js
  */

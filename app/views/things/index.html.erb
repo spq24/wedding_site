@@ -1,0 +1,91 @@
+<body data-spy="scroll" data-target=".nav-menu" data-offset="50">
+	<!-- Navigation Section -->
+	<section id="navigation" class="shadow">
+	
+		<div class="inner navigation">
+			
+			<!-- Logo Img -->
+			<div class="logo">
+				<a class="scroll" href="#home"><%= image_tag 'logo.png', alt: "Logo" %></a>
+			</div>
+			
+			<!-- Nav Menu -->
+			<div class="nav-menu">
+				
+				<ul class="nav main-nav">
+					<li><a class="scroll" href="#about">where & when</a></li>
+					<li><a class="scroll" href="#history">our story</a></li>
+					<li><a class="scroll" href="#bridegroom">engagement story</a></li>					
+					<li><a class="scroll" href="#team">our team</a></li>
+					<li><a class="scroll" href="#hotel">hotel</a></li>
+					<li><a class="scroll" href="#registry">Registry</a></li>
+					<li><a class="scroll" href="#photos">Photo Gallery</a></li>
+					<li><a class="scroll jade" style="color: #128E92;" href="#social">#allyqwedding</a></li>			
+				</ul>
+				
+			</div>
+			
+			
+				<!-- Dropdown Menu For Mobile Devices-->
+				<div class="dropdown mobile-drop">
+				  <a data-toggle="dropdown" class="mobile-menu" href="#"><i class="fa fa-bars"></i></a>
+				  <ul class="nav dropdown-menu fullwidth" role="menu" >
+					<li><a class="scroll" href="#home">home</a></li>
+					<li><a class="scroll" href="#about">where & when</a></li>
+					<li><a class="scroll" href="#history">our story</a></li>
+					<li><a class="scroll" href="#bridegroom">the bride & groom</a></li>					
+					<li><a class="scroll" href="#team">our team</a></li>
+					<li><a class="scroll" href="#hotel">hotel</a></li>
+					<li><a class="scroll" href="#register">Registry</a></li>
+					<li><a class="scroll" href="#photos">Photo Gallery</a></li>
+					<li><a class="scroll" href="#social">#allyqwedding</a></li>	
+				  </ul>
+				</div>
+		
+			<div class="clear"></div>
+		</div>
+	
+	</section>
+	<!-- End Navigation Section -->
+  
+  	<center>
+		<h1 class="hashtag">Some Messages & Memories From Your Friends & Family</h1>
+	</center>
+
+	<h2>Videos</h2>
+	<% @videos.each do |v| %>
+		<%= videojs_rails sources: { mp4: v.video }, setup: "{}", controls: false, width:"400", height: "400" %>
+	<% end %>
+
+	<h2>Images</h2>
+
+	<div id="blueimp-gallery" class="blueimp-gallery">
+	  <div class="slides"></div>
+	  <h3 class="title"></h3>
+	  <a class="prev">‹</a>
+	  <a class="next">›</a>
+	  <a class="close">×</a>
+	  <a class="play-pause"></a>
+	  <ol class="indicator"></ol>
+	</div>
+
+<div id="links">
+	<% @images.each do |i| %>
+		<a href="<%= i.image %>" title="<%= i.id %>">
+    		<img src="<%= i.image %>" alt="<%= i.id %>">
+		</a>
+	<% end %>
+</div>
+
+	
+		
+<script>
+document.getElementById('links').onclick = function (event) {
+  event = event || window.event;
+  var target = event.target || event.srcElement,
+    link = target.src ? target.parentNode : target,
+    options = {index: link, event: event},
+    links = this.getElementsByTagName('a');
+  blueimp.Gallery(links, options);
+};
+</script>

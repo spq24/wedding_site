@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( flipclock.min.js )
+Rails.application.config.assets.precompile += %w( flipclock.min.js video-js.swf vjs.eot vjs.svg vjs.ttf vjs.woff )

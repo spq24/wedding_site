@@ -18,6 +18,11 @@ class ThingsController < ApplicationController
   def thank_you
   end
 
+  def index
+    @images = Thing.where("image is NOT NULL and image != ''")
+    @videos = Thing.where("video is NOT NULL and video != ''")
+  end
+
 
   private
   

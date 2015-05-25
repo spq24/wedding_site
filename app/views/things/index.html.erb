@@ -6,21 +6,21 @@
 			
 			<!-- Logo Img -->
 			<div class="logo">
-				<a class="scroll" href="#home"><%= image_tag 'logo.png', alt: "Logo" %></a>
+				<a class="scroll" href="/#home"><%= image_tag 'logo.png', alt: "Logo" %></a>
 			</div>
 			
 			<!-- Nav Menu -->
 			<div class="nav-menu">
 				
 				<ul class="nav main-nav">
-					<li><a class="scroll" href="#about">where & when</a></li>
-					<li><a class="scroll" href="#history">our story</a></li>
-					<li><a class="scroll" href="#bridegroom">engagement story</a></li>					
-					<li><a class="scroll" href="#team">our team</a></li>
-					<li><a class="scroll" href="#hotel">hotel</a></li>
-					<li><a class="scroll" href="#registry">Registry</a></li>
-					<li><a class="scroll" href="#photos">Photo Gallery</a></li>
-					<li><a class="scroll jade" style="color: #128E92;" href="#social">#allyqwedding</a></li>			
+					<li><a class="scroll" href="/#about">where & when</a></li>
+					<li><a class="scroll" href="/#history">our story</a></li>
+					<li><a class="scroll" href="/#bridegroom">engagement story</a></li>					
+					<li><a class="scroll" href="/#team">our team</a></li>
+					<li><a class="scroll" href="/#hotel">hotel</a></li>
+					<li><a class="scroll" href="/#registry">Registry</a></li>
+					<li><a class="scroll" href="/#photos">Photo Gallery</a></li>
+					<li><a class="scroll jade" style="color: #128E92;" href="/#social">#allyqwedding</a></li>			
 				</ul>
 				
 			</div>
@@ -47,7 +47,12 @@
 	
 	</section>
 	<!-- End Navigation Section -->
-  
+  	<% flash.each do |name, msg| %>
+	  <div class="alert alert-<%= name %> alert-dismissable" role="alert">
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+	  </div>
+	<% end %>
   	<center>
 		<h1 class="hashtag">Some Messages & Memories From Your Friends & Family</h1>
 	</center>
@@ -77,7 +82,15 @@
 	<% end %>
 </div>
 
-	
+<% @images.each do |i| %>
+	<%= link_to i, method: :delete, data: {confirm: "Are you sure?"}, class: "table-link danger" do %>
+		<span class="fa-stack">
+			<%= i.id %>
+			<%= image_tag i.image %>
+			<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+		</span>
+	<% end %>	
+<% end %>
 		
 <script>
 document.getElementById('links').onclick = function (event) {

@@ -23,6 +23,12 @@ class ThingsController < ApplicationController
     @videos = Thing.where("video is NOT NULL and video != ''")
   end
 
+  def destroy
+    Thing.find(params[:id]).destroy
+    flash[:success] = "It's Gone Forever"
+    redirect_to things_path
+  end
+
 
   private
   

@@ -54,12 +54,12 @@
 	  </div>
 	<% end %>
   	<center>
-		<h1 class="hashtag">Some Messages & Memories From Your Friends & Family</h1>
+		<h1 class="hashtag">Some of Your Friends Wanted to Wish You Well Today!</h1>
 	</center>
 
 	<h2>Videos</h2>
+	<% @videos.each do |v| %>
+		<%= videojs_rails sources: { mp4: v.video }, setup: "{}", controls: false, width:"400", height: "400" %>
+	<% end %>
 
-
-
-
-	<h2>Images</h2>
+	<%= paginate @videos %>

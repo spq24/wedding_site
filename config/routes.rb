@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/surprise' => 'things#new'
   get '/thank_you' => 'things#thank_you', as: 'thank_you'
   get '/friends'   => 'things#index'
+  get '/friends/images'   => 'things#images'
+  get '/friends/videos'   => 'things#videos'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

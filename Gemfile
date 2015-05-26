@@ -30,6 +30,7 @@ gem 'imagesLoaded_rails'
 gem 'rails_admin'
 gem 'blueimp-gallery'
 gem 'videojs_rails'
+gem 'kaminari'
 
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production

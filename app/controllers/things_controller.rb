@@ -19,14 +19,20 @@ class ThingsController < ApplicationController
   end
 
   def index
-    @images = Thing.where("image is NOT NULL and image != ''")
-    @videos = Thing.where("video is NOT NULL and video != ''")
   end
 
   def destroy
     Thing.find(params[:id]).destroy
     flash[:success] = "It's Gone Forever"
     redirect_to things_path
+  end
+
+  def images
+    @images = Thing.where("image is NOT NULL and image != ''").page params[:page]
+  end
+
+  def videos
+    @videos = Thing.where("video is NOT NULL and video != ''").page params[:page]
   end
 
 

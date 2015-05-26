@@ -322,6 +322,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery.fileupload-rails
+  kaminari
   masonry-rails
   mini_magick
   pg

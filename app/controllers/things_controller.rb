@@ -28,7 +28,7 @@ class ThingsController < ApplicationController
   end
 
   def images
-    @images = Thing.where("image is NOT NULL and image != ''").page params[:page]
+    @images = Thing.where("image is NOT NULL and image != ''")
   end
 
   def videos

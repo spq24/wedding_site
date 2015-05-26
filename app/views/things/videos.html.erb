@@ -55,9 +55,7 @@
 	<% end %>
   	<center>
 		<h1 class="hashtag">Some of Your Friends Wanted to Wish You Well Today!</h1>
-	</center>
 
-	<h2>Videos</h2>
 	  <div class="js-masonry" id="masonry-container" data-masonry-options='{ "itemSelector": ".insta" }' >
 		    <% @videos.each do |v| %>
 				<div class="insta">
@@ -74,3 +72,4 @@
 		</div>
 
 		<%= paginate @videos %>
+	</center>

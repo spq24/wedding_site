@@ -57,10 +57,6 @@
 		<h1 class="hashtag">Some Memories From Your Past</h1>
 	</center>
 
-	
-
-	<h2>Images</h2>
-
 	<div id="blueimp-gallery" class="blueimp-gallery">
 	  <div class="slides"></div>
 	  <h3 class="title"></h3>
@@ -72,14 +68,27 @@
 	</div>
 
 <div id="links">
+	<div class="js-masonry" id="masonry-container" data-masonry-options='{ "itemSelector": ".insta" }' >
 	<% @images.each do |i| %>
-		<a href="<%= i.image %>" title="<%= i.id %>">
-    		<img src="<%= i.image %>" alt="<%= i.id %>">
-		</a>
-	<% end %>
+			<div class="insta">
+				<div class="insta-inner">
+		          	<div class="insta-user">
+		          		<%= i.name %>
+					</div>
+					<div class="insta-img">
+						<a href="<%= i.image %>" title="<%= i.id %>">
+				    		<img src="<%= i.image %>" alt="<%= i.id %>">
+						</a>
+					</div>
+				</div>
+			</div>
+	    <% end %>
+	</div>
 </div>
 
-<%= paginate @images %>
+<%= paginate @images %>  		
+
+
 
 		
 <script>

@@ -163,7 +163,55 @@ Our Works / isotope Scripts
 
       
     });
+
+
+/* ==============================================
+insta/masonry layout
+===============================================	*/
+
+     $(window).load(function(){
+      
+      var $container = $('.instas');
+
+      $container.isotope({
+        itemSelector : '.insta'
+      });
+      
+      
+      var $optionSets = $('#options .option-set'),
+          $optionLinks = $optionSets.find('a');
+
+      $optionLinks.click(function(){
+        var $this = $(this);
+        // don't proceed if already selected
+        if ( $this.hasClass('selected') ) {
+          return false;
+        }
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.selected').removeClass('selected');
+        $this.addClass('selected');
   
+        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        var options = {},
+            key = $optionSet.attr('data-option-key'),
+            value = $this.attr('data-option-value');
+        // parse 'false' as false boolean
+        value = value === 'false' ? false : value;
+        options[ key ] = value;
+        if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+          // changes in layout modes need extra logic
+          changeLayoutMode( $this, options )
+        } else {
+          // otherwise, apply new options
+          $container.isotope( options );
+        }
+        
+        return false;
+      });
+
+      
+    });
+
  /* ==============================================
 Page Loader
 =============================================== */
@@ -570,10 +618,3 @@ Count Factors
         onComplete: null,  // callback method for when the element finishes updating
     };
 })(jQuery);
-
-var container = document.querySelector('#ig-container');
-var msnry;
-// initialize Masonry after all images have loaded
-imagesLoaded( container, function() {
-  msnry = new Masonry( container );
-});

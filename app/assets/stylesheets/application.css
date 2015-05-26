@@ -12,7 +12,8 @@
  *
  *= require font-awesome
  *= require blueimp-gallery-all
+  *= require video-js
  *= require_tree .
  *= require_self
- *= require video-js
+
  */

@@ -58,18 +58,18 @@
 	    <% @tags.each do |t| %>
 			<div class="insta">
 				<div class="insta-inner">
-          <div class="insta-user">
-            <%= link_to image_tag(t["user"]["profile_picture"]), "https://instagram.com/" + t["user"]["username"], target: "_blank" %>
-            <%= link_to t["user"]["username"], "https://instagram.com/" + t["user"]["username"], target: "_blank" %>
-            <%= link_to time_ago_in_words(Time.at(t["created_time"].to_i)) + " ago", "https://instagram.com/" + t["user"]["username"], target: "_blank", class: "pull-right"  %>
-          </div>
+		          	<div class="insta-user">
+			            <%= link_to image_tag(t["user"]["profile_picture"]), "https://instagram.com/" + t["user"]["username"], target: "_blank" %>
+			            <%= link_to t["user"]["username"], "https://instagram.com/" + t["user"]["username"], target: "_blank" %>
+			            <%= link_to time_ago_in_words(Time.at(t["created_time"].to_i)) + " ago", "https://instagram.com/" + t["user"]["username"], target: "_blank", class: "pull-right"  %>
+		          	</div>
 					<div class="insta-img">
-            <%= link_to image_tag(t["images"]["standard_resolution"]["url"]), t["link"], target: "_blank" %>
+            			<%= link_to image_tag(t["images"]["standard_resolution"]["url"]), t["link"], target: "_blank" %>
 		    		</div>
 		    		<div class="insta-desc">
-              <% t["tags"].each do |i| %>
-              <%= link_to "#" + i, "https://instagram.com/explore/tags/#{i}", target: "_blank" %>
-              <% end %>
+		              <% t["tags"].each do |i| %>
+		              <%= link_to "#" + i, "https://instagram.com/explore/tags/#{i}", target: "_blank" %>
+		              <% end %>
 		    		</div>
 				</div>
 			</div>

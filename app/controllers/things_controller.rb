@@ -39,6 +39,6 @@ class ThingsController < ApplicationController
   private
   
   def thing_params
-      params.require(:thing).permit(:image, :video, :name, :email)
+      params.require(:thing).permit(:image, :video, :name, :email, :video_html)
   end
 end

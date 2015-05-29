@@ -63,8 +63,8 @@
 			          	<div class="insta-user">
 				            <%= v.name %>
 			          	</div>
-						<div class="insta-img">
-	            			<%= videojs_rails sources: { mp4: v.video, mov: v.video }, setup: "{}", controls: false, width:"400", height: "400", style: ".vjs-big-play-button {left: 4.5em; top: 5.5em;}" %>
+						<div class="video">
+	            			<%= v.video_html %>
 			    		</div>
 					</div>
 				</div>

@@ -29,6 +29,7 @@ gem 'rails_admin'
 gem 'blueimp-gallery'
 gem 'videojs_rails'
 gem 'kaminari'
+gem 'auto_html'
 
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production

@@ -29,6 +29,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    auto_html (1.6.4)
+      redcarpet (~> 3.1)
+      rinku (~> 1.5.0)
     autoprefixer-rails (5.1.8)
       execjs
       json
@@ -262,7 +265,9 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.2.3)
     remotipart (1.2.1)
+    rinku (1.5.1)
     safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -303,6 +308,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  auto_html
   aws-sdk
   blueimp-gallery
   bootstrap-sass (~> 3.3.4)

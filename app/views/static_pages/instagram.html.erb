@@ -51,6 +51,14 @@
 		<h1 class="hashtag"><a href="http://ctt.ec/1fUea" target="_blank">#allyqwedding</a></h1>
 		<p class="join">(Use our wedding hashtag when you instagram so we can have all our pictures memories here!)</p>
 
+		<br />
+		<br />
+		<% if @next_max_id.present? %>
+			<%= link_to "Next Page", "/instagram?max_tag_id=#{@next_max_id}", class: "btn btn-lrg btn-success" %>
+		<% else %>
+			<%= link_to "Back To The Beginning", "/instagram", class: "btn btn-lrg btn-info" %>
+		<% end %>	
+
 	</center>
   
   <div id="ig-container" class="instas">
@@ -74,3 +82,11 @@
 			</div>
 	    <% end %>
 	</div>
+
+	<center>
+		<% if @next_max_id.present? %>
+			<%= link_to "Next Page", "/instagram?max_tag_id=#{@next_max_id}", class: "btn btn-lrg btn-success" %>
+		<% else %>
+			<%= link_to "Back To The Beginning", "/instagram", class: "btn btn-lrg btn-info" %>
+		<% end %>	
+	</center>
